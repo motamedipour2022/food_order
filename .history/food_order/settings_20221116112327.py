@@ -79,7 +79,6 @@ DATABASES = {
         "NAME": "foodOnline_db",
         'USER':'postgres',
         'PASSWORD': 'lpsklpsk0296',
-        'HOST':'localhost',
     }
 }
 

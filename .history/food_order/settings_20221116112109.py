@@ -76,10 +76,7 @@ WSGI_APPLICATION = "food_order.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "foodOnline_db",
-        'USER':'postgres',
-        'PASSWORD': 'lpsklpsk0296',
-        'HOST':'localhost',
+        "NAME": "db.sqlite3",
     }
 }
 

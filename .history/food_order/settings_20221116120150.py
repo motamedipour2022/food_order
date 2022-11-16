@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-^n3c+^*z^0hb-3(ypv^#qz!$nb^)t18#+=)f%9i444t7^+n=d@"
+# SECRET_KEY = "django-insecure-^n3c+^*z^0hb-3(ypv^#qz!$nb^)t18#+=)f%9i444t7^+n=d@"
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = config('DEBUG', cast=bool)  
 
 ALLOWED_HOSTS = []
 
@@ -76,10 +79,15 @@ WSGI_APPLICATION = "food_order.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "foodOnline_db",
-        'USER':'postgres',
-        'PASSWORD': 'lpsklpsk0296',
-        'HOST':'localhost',
+        # "NAME": "foodOnline_db",
+        "NAME":config('DB_NAME'),
+        # 'USER':'postgres',
+        'User' : config('DB_USER'),
+        # 'PASSWORD': 'lpsklpsk0296',
+        'PASSWORD':config('DB_PASSWORD'),
+        # 'HOST':'localhost',
+        'HOST':
+
     }
 }
 
